@@ -19,6 +19,7 @@
     ],
     "rules": {
         "no-use-before-define": "off",
-        "linebreak-style": "warn"
+        "linebreak-style": "warn",
+        "react/prop-types": ["error", { "ignore": ["navigation"]}]
     }
 }
