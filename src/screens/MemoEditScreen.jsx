@@ -16,7 +16,6 @@ export default function MemoEditScreen(props) {
       <CircleButton
         name="check"
         onPress={() => { navigation.goBack(); }}
-
       />
     </KeyboardSafeView>
   );
