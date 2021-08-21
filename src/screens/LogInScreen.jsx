@@ -61,7 +61,7 @@ export default function LogInScreen(props) {
           textContentType="password"
         />
         <Button
-           label="Submit"
+          label="Submit"
           onPress={handlePress}
         />
         <View style={styles.footer}>

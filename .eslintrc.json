@@ -19,7 +19,8 @@
     ],
     "rules": {
         "no-use-before-define": "off",
-        "linebreak-style": "warn",
+        // "linebreak-style": "warn",
+        "linebreak-style": ["error", "windows"],
         "react/prop-types": ["error", { "ignore": ["navigation"]}]
     }
 }

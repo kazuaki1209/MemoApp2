@@ -11,7 +11,7 @@ export default function MemoListScreen(props) {
     navigation.setOptions({
       headerRight: () => <LogOutButton />,
     });
-  }, [])
+  }, []);
   return (
     <View style={styles.container}>
       <MemoList />
