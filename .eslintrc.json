@@ -21,6 +21,7 @@
         "no-use-before-define": "off",
         // "linebreak-style": "warn",
         "linebreak-style": ["error", "windows"],
-        "react/prop-types": ["error", { "ignore": ["navigation"]}]
+        "react/prop-types": ["error", { "ignore": ["navigation"]}],
+        "import/prefer-default-export": 0
     }
 }

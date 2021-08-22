@@ -34,6 +34,6 @@ const styles = StyleSheet.create({
     flex: 1,
     textAlignVertical: 'top',
     fontSize: 16,
-    lineHeight  : 24,
+    lineHeight : 24,
   },
 });
