@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import {
-  View, TextInput, StyleSheet,
+  View, TextInput, StyleSheet, Alert,
 } from 'react-native';
 
 import firebase from 'firebase';
 
 import CircleButton from '../components/CircleButton';
 import KeyboardSafeView from '../components/KeyboardSafeView';
+import { translateErrors } from '../utils';
 
-export default function MemoCreateScreen(props) {
-  const { navigation } = props;
+export default function MemoCreateScreen() {
+  // const { navigation } = props;
   const [bodyText, setBodyText] = useState('');
 
   function handlePress() {
@@ -20,12 +21,11 @@ export default function MemoCreateScreen(props) {
       bodyText,
       updatedAt: new Date(),
     })
-      .then((docRef) => {
-        console.log('Created!', docRef.id);
-        navigation.goBack();
+      .then(() => {
       })
       .catch((error) => {
-        console.log('Error!', error);
+        const errorMsg = translateErrors(error.code);
+        Alert.alert(errorMsg.title, errorMsg.description);
       });
   }
 
@@ -61,6 +61,6 @@ const styles = StyleSheet.create({
     flex: 1,
     textAlignVertical: 'top',
     fontSize: 16,
-    lineHeight : 24,
+    lineHeight: 24,
   },
 });

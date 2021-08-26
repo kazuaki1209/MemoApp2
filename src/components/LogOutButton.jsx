@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  TouchableOpacity, Text, StyleSheet, Alert
+  TouchableOpacity, Text, StyleSheet, Alert,
 } from 'react-native';
 import firebase from 'firebase';
 import { useNavigation } from '@react-navigation/native';
@@ -13,13 +13,13 @@ export default function LogOutButton() {
       .then(() => {
         navigation.reset({
           index: 0,
-          routes: [{ name: 'LogIn'}],
+          routes: [{ name: 'LogIn' }],
         });
       })
       .catch(() => {
         Alert.alert('ログアウトに失敗しました');
       });
-}
+  }
 
   return (
     <TouchableOpacity onPress={handlePress} style={styles.container}>
@@ -36,5 +36,5 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 14,
     color: 'rgba(255, 255, 255, 0.7)',
-  }
-})
+  },
+});

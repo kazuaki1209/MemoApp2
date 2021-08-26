@@ -1,33 +1,28 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import {
   View, Text, TextInput, StyleSheet, TouchableOpacity, Alert,
 } from 'react-native';
 import firebase from 'firebase';
 
 import Button from '../components/Button';
-import Loading from '../components/Loading';
 import { translateErrors } from '../utils';
-
 
 export default function SignUpScreen(props) {
   const { navigation } = props;
-  const [ email, setEmail ] = useState('');
-  const [ password, setPassword ] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [isLoading, setLoading] = useState(true);
 
   function handlePress() {
     setLoading(true);
     firebase.auth().createUserWithEmailAndPassword(email, password)
-      .then((userCredential) => {
-        const { user } = userCredential;
-        console.log(user.uid);
+      .then(() => {
         navigation.reset({
           index: 0,
           routes: [{ name: 'MemoList' }],
         });
       })
       .catch((error) => {
-        console.log(error.code, error.message);
         const errorMsg = translateErrors(error.code);
         Alert.alert(errorMsg.title, errorMsg.description);
       })

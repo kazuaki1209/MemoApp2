@@ -10,8 +10,8 @@ import { translateErrors } from '../utils';
 
 export default function LogInScreen(props) {
   const { navigation } = props;
-  const [ email, setEmail ] = useState('');
-  const [ password, setPassword ] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -31,9 +31,7 @@ export default function LogInScreen(props) {
   function handlePress() {
     setLoading(true);
     firebase.auth().signInWithEmailAndPassword(email, password)
-      .then((userCredential) => {
-        const { user } = userCredential;
-        console.log(user.uid);
+      .then(() => {
         navigation.reset({
           index: 0,
           routes: [{ name: 'MemoList' }],

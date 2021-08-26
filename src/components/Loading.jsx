@@ -16,13 +16,13 @@ export default function Loading(props) {
   );
 }
 
-Loading.propTypes - {
+Loading.propTypes = {
   isLoading: bool,
-}
+};
 
 Loading.defaultProps = {
   isLoading: false,
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -40,6 +40,5 @@ const styles = StyleSheet.create({
   },
   inner: {
     marginBottom: 80,
-  }
+  },
 });
-

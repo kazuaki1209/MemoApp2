@@ -16,7 +16,7 @@ export default function MemoList(props) {
   const navigation = useNavigation();
 
   function deleteMemo(id) {
-    const { currentUser} = firebase.auth();
+    const { currentUser } = firebase.auth();
     if (currentUser) {
       const db = firebase.firestore();
       const ref = db.collection(`users/${currentUser.uid}/memos`).doc(id);
@@ -75,7 +75,7 @@ MemoList.propTypes = {
     bodyText: string,
     updatedAt: instanceOf(Date),
   })).isRequired,
-}
+};
 
 const styles = StyleSheet.create({
   container: {

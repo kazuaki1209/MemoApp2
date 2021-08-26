@@ -13,16 +13,16 @@ export default function Icon(props) {
   if (!fontLoaded) {
     return null;
   }
-  return <CustomIcon name={name} size={size} color={color} style={{lineHeight: size - 1 }} />;
+  return <CustomIcon name={name} size={size} color={color} style={{ lineHeight: size - 1 }} />;
 }
 
 Icon.propTypes = {
-   name: oneOf(['plus', 'delete', 'pencil', 'check']).isRequired,
+  name: oneOf(['plus', 'delete', 'pencil', 'check']).isRequired,
   size: number,
   color: string,
-}
+};
 
 Icon.defaultProps = {
   size: 24,
   color: '#000000',
-}
+};

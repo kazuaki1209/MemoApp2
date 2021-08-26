@@ -2,7 +2,6 @@ import React from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { func, shape, string } from 'prop-types';
 
-
 export default function Button(props) {
   const { label, onPress, style } = props;
   return (
@@ -21,7 +20,7 @@ Button.propTypes = {
 Button.defaultProps = {
   onPress: null,
   style: null,
-}
+};
 
 const styles = StyleSheet.create({
   buttonContainer: {
